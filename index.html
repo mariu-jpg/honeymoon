@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>北海道ハネムーン しおり</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#484848;--card:#fff;--line:#484848;--rule:#dcdcdc;--grid:#f6ecbf;--accent:#ee5a36;--on:#fff;
+--soft:color-mix(in srgb,var(--accent) 12%,var(--bg));
+--hd:"Dela Gothic One","Hiragino Sans","Yu Gothic",sans-serif;--bd:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;--gt:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2e2e2e;--ink:#f2f2f2;--card:#3a3a3a;--line:#bdbdbd;--rule:#555;--grid:#403d30}}
+:root[data-theme="dark"]{--bg:#2e2e2e;--ink:#f2f2f2;--card:#3a3a3a;--line:#bdbdbd;--rule:#555;--grid:#403d30}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--bd);font-weight:500;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+.ic{width:1em;height:1em;flex:none;display:block}
+.wrap{max-width:640px;margin:0 auto;padding:16px 16px 70px}
+.hero{position:relative;background:var(--accent);color:var(--on);border-radius:30px 30px 30px 90px;padding:20px 20px 18px;overflow:hidden;transition:background .3s}
+.hero:before{content:"";position:absolute;right:-40px;top:-50px;width:190px;height:170px;background:rgba(255,255,255,.28);border-radius:58% 42% 50% 50%/45% 55% 45% 55%}
+.hero:after{content:"";position:absolute;right:50px;bottom:-34px;width:90px;height:80px;background:rgba(255,255,255,.18);border-radius:50%}
+.kick{font-family:var(--gt);font-size:11px;font-weight:700;letter-spacing:.18em;position:relative}
+.ttl{font-family:var(--hd);font-weight:400;font-size:32px;line-height:1.15;margin:6px 0 14px;position:relative}
+.ttl small{display:block;font-family:var(--gt);font-weight:700;font-size:11px;letter-spacing:.14em;margin-bottom:6px;opacity:.85}
+.clock{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;position:relative}
+.time{font-family:var(--hd);font-weight:400;font-size:46px;line-height:1;background:#484848;color:#fff;border-radius:14px;padding:7px 12px}
+.date{font-weight:700;font-size:16px;line-height:1.35}
+.cd{margin-top:14px;display:inline-block;background:#fff;color:#484848;border-radius:999px;padding:4px 14px;font-family:var(--gt);font-weight:700;font-size:13px;transform:rotate(-2deg);position:relative}
+.nav{display:flex;align-items:center;gap:10px;margin:26px 0 12px}
+.nb{flex:none;width:50px;height:50px;border-radius:50%;border:0;background:var(--accent);color:var(--on);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .1s,opacity .2s}
+.nb:active{transform:scale(.92)}
+.nb:disabled{opacity:.25;cursor:default}
+.nb .ic{width:24px;height:24px}
+.dn{flex:1;text-align:center}
+.dn b{font-family:var(--hd);font-weight:400;font-size:30px;display:block;line-height:1.1;color:var(--accent)}
+.dn span{font-family:var(--gt);font-size:14px;font-weight:700}
+.dots{display:flex;justify-content:center;gap:9px;margin-bottom:20px}
+.dot{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);background:transparent;font-size:13px;color:var(--ink);cursor:pointer;font-family:var(--gt);font-weight:700;padding:0}
+.dot.on{background:var(--accent);border-color:var(--accent);color:var(--on)}
+.dot.today:not(.on){border-color:var(--accent);color:var(--accent)}
+.head{margin:0 2px 18px}
+.route{display:inline-block;background:var(--soft);color:var(--ink);font-weight:700;border-radius:999px;padding:5px 16px;font-size:15px;border-left:6px solid var(--accent)}
+.tl{position:relative}
+.tl:before{content:"";position:absolute;left:41px;top:6px;bottom:6px;border-left:2px solid var(--rule)}
+.it{position:relative;display:flex;gap:12px;margin-bottom:18px}
+.tm{flex:none;width:84px;position:relative;z-index:1}
+.tm i{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--on);font-size:20px;margin-left:21px;box-shadow:0 0 0 5px var(--bg)}
+.tm b{display:block;font-family:var(--hd);font-weight:400;font-size:13px;margin:5px 0 0;background:var(--bg);width:max-content;padding:0 3px}
+.cd2{flex:1;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:13px 15px;min-width:0;position:relative}
+.t-hotel .cd2{background:var(--soft)}
+.tag{display:inline-block;font-family:var(--gt);font-size:10.5px;font-weight:700;letter-spacing:.12em;padding:2px 10px;border-radius:999px;margin-bottom:6px;background:#e9e9e9;color:#484848}
+.t-hotel .tag{background:#e8548c;color:#fff}.t-eat .tag{background:#f2c230}.t-move .tag{background:#2ba39d;color:#fff}.t-sight .tag{background:#8cc63f}
+.cd2 h3{margin:0;font-size:18px;line-height:1.4;font-weight:700}
+.cd2 p{margin:7px 0 0;font-family:var(--gt);font-weight:500;font-size:13.5px;line-height:1.65}
+.cd2 p.warn{display:flex;gap:6px;align-items:flex-start;background:#fff1bf;color:#484848;border-radius:10px;padding:7px 10px;font-weight:700}
+.cd2 p.warn .ic{margin-top:3px;font-size:14px}
+.btns{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--gt);font-size:12.5px;font-weight:700;text-decoration:none;color:#484848;background:#f2c230;border-radius:999px;padding:6px 13px}
+.btn .ic{font-size:14px}
+.btn.map{background:#2ba39d;color:#fff}.btn.web{background:#e8548c;color:#fff}.btn.tel{background:#8cc63f}
+.btn:active{transform:scale(.96)}
+.rec{margin-top:13px;background:var(--soft);border-radius:14px;padding:10px 12px}
+.t-hotel .rec{background:var(--card)}
+.rec>b{display:flex;align-items:center;gap:5px;font-family:var(--bd);font-weight:700;font-size:13px;color:var(--accent);margin-bottom:2px}
+.ri{display:flex;align-items:center;gap:8px;padding:7px 0}
+.ri+.ri{border-top:1px solid var(--rule)}
+.ri div{flex:1;min-width:0}
+.ri strong{font-family:var(--bd);font-weight:700;font-size:14.5px;display:block;line-height:1.35}
+.ri small{font-family:var(--gt);font-weight:500;font-size:12px;line-height:1.5;display:block;opacity:.85}
+.ri .btn{flex:none;padding:6px 8px}
+.it.now .cd2{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
+.it.now .cd2:after{content:"NOW";position:absolute;right:10px;top:-13px;background:var(--accent);color:var(--on);font-family:var(--hd);font-size:12px;padding:3px 11px;border-radius:999px;letter-spacing:.06em}
+.it.past{opacity:.5}
+.foot{text-align:center;font-family:var(--gt);font-size:12px;font-weight:700;margin-top:28px;opacity:.6;letter-spacing:.1em}
+.tgl{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;padding:0}
+.pat{margin-top:10px;background:var(--soft);border-radius:14px;padding:4px 12px}
+.pr{display:flex;gap:10px;align-items:center;padding:8px 0}
+.pr+.pr{border-top:1px solid var(--rule)}
+.pl{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on);font-family:var(--hd);font-size:13px;display:flex;align-items:center;justify-content:center}
+.pr div{flex:1;min-width:0;font-family:var(--gt);font-weight:700;font-size:13px;line-height:1.6}
+.pr div span{display:block}
+.t-hotel .pat{background:var(--card)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="kick">OUR HONEYMOON TRIP 2026</div>
+    <div class="ttl"><small>HIROSHIMA → HOKKAIDO → HIROSHIMA</small>北海道<br>ハネムーン しおり</div>
+    <div class="clock"><div class="time" id="clk">--:--</div><div class="date" id="dt">--</div></div>
+    <div class="cd" id="cd"></div>
+  </section>
+  <div class="nav">
+    <button class="nb" id="prev" aria-label="前の日"></button>
+    <div class="dn"><b id="dnum">DAY 1</b><span id="dlab"></span></div>
+    <button class="nb" id="next" aria-label="次の日"></button>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div class="head"><span class="route" id="route"></span></div>
+  <div class="tl" id="tl"></div>
+  <div class="foot">HAVE A NICE TRIP</div>
+</div>
+<button class="tgl" id="tgl" aria-label="ダーク/ライト切替"></button>
+
+<script>
+/* ===== ここを書き換えればOK =====
+ t: 表示時刻 / m: 時刻(分)・NOWハイライト用 / ic: アイコン / ty: move|eat|sight|hotel|todo
+ map: Googleマップ検索ワード / web: 公式URL / tel: 電話番号(ホテルは要追記) / n: メモ / w: 注意書き(黄色) */
+const DAYS=[
+{d:"2026-10-26",route:"広島 → 札幌",items:[
+ {t:"8:22〜",m:502,ic:"🚌",ty:"move",h:"五日市 → 広島空港（JR＋リムジンバス）",pat:[["A","JR 五日市 8:22発 → 広島 8:41着","バス 広島駅新幹線口 8:50発 → 空港 9:40着"],["B","JR 五日市 8:35発 → 広島 8:54着","バス 広島駅新幹線口 9:05発 → 空港 9:55着"],["C","JR 五日市 8:42発 → 広島 9:01着","バス 広島駅新幹線口 9:20発 → 空港 10:10着"]],n:"リムジンバスは広島駅 新幹線口（北口）の5番のりば。運賃 大人1,500円（片道・全席自由・予約不要）。交通系IC・タッチ決済OK。",map:"広島駅 新幹線口 バスのりば",web:"https://www.hij.airport.jp/access/timetable/2.html"},
+ {t:"10:55",m:655,ic:"✈️",ty:"move",h:"広島空港 発",map:"広島空港",web:"https://www.hij.airport.jp/"},
+ {t:"12:45",m:765,ic:"🛬",ty:"move",h:"新千歳空港 着",map:"新千歳空港",web:"https://www.new-chitose-airport.jp/ja/"},
+ {t:"ランチ",ic:"🍛",ty:"eat",h:"新千歳空港ターミナルビルでごはん",n:"スープカレー・さっぽろラーメンなど",map:"新千歳空港 ターミナルビル グルメ"},
+ {t:"移動",ic:"🚃",ty:"move",h:"在来線で札幌駅へ（約50分）",map:"札幌駅"},
+ {t:"荷物",ic:"🧳",ty:"todo",h:"荷物を先に預ける？",w:"ススキノの東横INNは20時チェックイン。先に荷物を預けてもOK。",map:"東横INN札幌すすきの交差点"},
+ {t:"観光",ic:"📸",ty:"sight",h:"札幌さんぽ",n:"赤レンガ（道庁旧本庁舎）・テレビ塔・クラーク像。余裕があれば札幌ビール工房も。",map:"北海道庁旧本庁舎 赤れんが庁舎",rec:[["北菓楼 札幌本館","赤れんが庁舎の近く。スイーツ休憩に","北菓楼 札幌本館"],["雪印パーラー 札幌本店","ソフトクリーム・パフェの老舗カフェ","雪印パーラー 札幌本店"],["六花亭 札幌本店","北海道の定番お菓子。お土産の下見にも","六花亭 札幌本店"],["サッポロビール博物館","ビール好きならぜひ。見学＋試飲","サッポロビール博物館"]]},
+ {t:"18:00",m:1080,ic:"🍖",ty:"eat",h:"札幌ジンギスカン本店",map:"札幌ジンギスカン本店"},
+ {t:"20:00",m:1200,ic:"🏨",ty:"hotel",h:"チェックイン｜東横INN 札幌すすきの交差点",map:"東横INN札幌すすきの交差点",web:"https://www.toyoko-inn.com/",tel:"011-207-1045"}
+]},
+{d:"2026-10-27",route:"札幌 → 登別温泉",items:[
+ {t:"〜10:00",m:600,ic:"🧳",ty:"hotel",h:"チェックアウト｜東横INN 札幌すすきの交差点",map:"東横INN札幌すすきの交差点",tel:"011-207-1045"},
+ {t:"午前",ic:"🦀",ty:"eat",h:"二条市場で海鮮",n:"食べてからチェックアウトでもOK（10時まで）",web:"http://nijomarket.com/",map:"二条市場 札幌",rec:[["丼兵衛 二条市場店","行列の海鮮丼専門店。バラちらし丼が名物","丼兵衛 二条市場店"],["近藤昇商店 寿司処 けいらん","地元でも人気の海鮮丼のお店","近藤昇商店 寿司処 けいらん"],["堺本商店","明治39年創業の老舗。カニ・海産物のお土産に","堺本商店 二条市場"]]},
+ {t:"12:45",m:765,ic:"🚌",ty:"move",h:"さっぽろテレビ塔横 地下1階グルメコーナー集合",w:"まほろば号 送迎バス：13時までに到着！",map:"さっぽろテレビ塔"},
+ {t:"15:00頃",m:900,ic:"♨️",ty:"hotel",h:"登別温泉 着｜旅館まほろば",n:"チェックイン＆温泉街を散策",map:"登別温泉 まほろば",web:"https://www.noboribetsu-spa.jp/",tel:"0143-84-2211",w:"電話受付：平日10:00〜17:00"}
+]},
+{d:"2026-10-28",route:"登別 → 札幌 → 小樽",items:[
+ {t:"朝",m:600,ic:"🧳",ty:"hotel",h:"チェックアウト｜旅館まほろば",map:"登別温泉 まほろば",tel:"0143-84-2211",w:"電話受付：平日10:00〜17:00"},
+ {t:"午前〜",ic:"🌋",ty:"sight",h:"登別温泉さんぽ",n:"バスの時間まで温泉街と地獄谷を散策",map:"登別温泉 地獄谷",rec:[["地獄谷","湯けむり立ちのぼる迫力の景色","登別 地獄谷"],["閻魔堂","温泉街のシンボル。閻魔大王の仕掛け時計","登別温泉 閻魔堂"],["泉源公園・足湯","散策の合間にあったまる","登別温泉 泉源公園 足湯"]]},
+ {t:"14:15",m:855,ic:"🚌",ty:"move",h:"登別温泉バスターミナル発のバスに乗る（登別駅へ）",n:"温泉街の近くから乗車",map:"登別温泉バスターミナル"},
+ {t:"14:49",m:889,ic:"🚄",ty:"move",h:"登別駅 発（特急）",map:"登別駅"},
+ {t:"16:03",m:963,ic:"🚉",ty:"move",h:"札幌駅 着",map:"札幌駅"},
+ {t:"16:30",m:990,ic:"🚃",ty:"move",h:"札幌駅 発",map:"札幌駅"},
+ {t:"17:04",m:1024,ic:"🚉",ty:"move",h:"小樽駅 着",map:"JR小樽駅"},
+ {t:"荷物",ic:"🧳",ty:"hotel",h:"ドーミーイン PREMIUM 小樽に荷物を預ける",map:"ドーミーインPREMIUM小樽",web:"https://www.hotespa.net/",tel:"0134-21-5489"},
+ {t:"18:30",m:1110,ic:"🍽️",ty:"eat",h:"小樽運河｜小樽倉庫No.1で夜ごはん",map:"小樽倉庫No.1",web:"https://otaru.gr.jp/"},
+ {t:"ついでに",ic:"🧺",ty:"todo",h:"洗濯する",n:"ホテルのランドリーで。"}
+]},
+{d:"2026-10-29",route:"小樽 → 札幌 → 函館",items:[
+ {t:"9:00頃",m:540,ic:"🧳",ty:"hotel",h:"チェックアウト｜ドーミーイン PREMIUM 小樽",map:"ドーミーインPREMIUM小樽",tel:"0134-21-5489"},
+ {t:"午前",ic:"🎐",ty:"sight",h:"小樽さんぽ・運河エリア",n:"三角市場・かま栄・ガラス工房など",map:"小樽運河",web:"https://otaru.gr.jp/",rec:[["かま栄 本店","名物パンロール。食べ歩きにぴったり","かま栄 小樽 本店"],["ルタオ 本店","小樽といえばチーズケーキ。カフェ併設","ルタオ 本店 小樽"],["北一硝子 三号館","ガラス雑貨とカフェ。おそろいのお土産に","北一硝子 三号館"],["滝波食堂（三角市場）","市場で海鮮丼。お昼におすすめ","滝波食堂 三角市場"]]},
+ {t:"12:17",m:737,ic:"🚃",ty:"move",h:"小樽駅 発",map:"JR小樽駅"},
+ {t:"12:57",m:777,ic:"🚉",ty:"move",h:"札幌駅 着",map:"札幌駅"},
+ {t:"13:26",m:806,ic:"🚄",ty:"move",h:"札幌駅 発（函館方面）",map:"札幌駅"},
+ {t:"17時台",m:1020,ic:"🚉",ty:"move",h:"函館駅 着",map:"JR函館駅",web:"https://www.hakodate-kankou.com/"},
+ {t:"移動",ic:"🚕",ty:"move",h:"タクシーで宿へ（30分くらい？）",map:"函館駅"},
+ {t:"18:00",m:1080,ic:"🏨",ty:"hotel",h:"チェックイン｜平成館 しおさい亭",map:"平成館 しおさい亭 函館",tel:"0138-59-2335"}
+]},
+{d:"2026-10-30",route:"函館 → 札幌",items:[
+ {t:"10:00",m:600,ic:"🧳",ty:"hotel",h:"チェックアウト｜平成館 しおさい亭",map:"平成館 しおさい亭 函館",tel:"0138-59-2335"},
+ {t:"午前〜昼",ic:"🍣",ty:"eat",h:"函館観光・どんぶり横丁でお昼ごはん",map:"函館どんぶり横丁",web:"https://www.hakodate-kankou.com/",rec:[["きくよ食堂 本店","函館朝市の人気店。名物は巴丼","きくよ食堂 本店 函館"],["いか清","いかの踊り食い・イカ料理の老舗","函館朝市 いか清"],["金森赤レンガ倉庫","ショップ＆カフェで散策・お土産","金森赤レンガ倉庫"],["八幡坂","函館らしい坂道の写真スポット","八幡坂 函館"]]},
+ {t:"15:01",m:901,ic:"🚄",ty:"move",h:"函館駅 発",map:"JR函館駅"},
+ {t:"18:47",m:1127,ic:"🚉",ty:"move",h:"札幌駅 着",map:"JR札幌駅"},
+ {t:"19:30",m:1170,ic:"🍶",ty:"eat",h:"海鮮酒造231",map:"海鮮酒造231 札幌"},
+ {t:"20:00",m:1200,ic:"🏨",ty:"hotel",h:"アパホテル〈札幌大通駅前西〉に宿泊",map:"アパホテル 札幌大通駅前西",web:"https://www.apahotel.com/",tel:"0570-012-711"}
+]},
+{d:"2026-10-31",route:"札幌 → 広島",items:[
+ {t:"午前",m:600,ic:"🧳",ty:"hotel",h:"チェックアウト｜アパホテル 札幌大通駅前西",map:"アパホテル 札幌大通駅前西",tel:"0570-012-711"},
+ {t:"午前〜",ic:"🛍️",ty:"sight",h:"散策＆お土産購入",map:"札幌駅 お土産",rec:[["北海道どさんこプラザ 札幌店","道内の名産品がそろうセレクトショップ","北海道どさんこプラザ 札幌店"],["きのとや 大通公園店","スイーツのお土産に","きのとや 大通公園店"],["狸小路商店街","ホテルから近い。ドラッグストア・雑貨も","狸小路商店街"]]},
+ {t:"移動",ic:"🚃",ty:"move",h:"在来線で新千歳空港へ（約50分）",map:"新千歳空港"},
+ {t:"15:00",m:900,ic:"✈️",ty:"move",h:"新千歳空港 発",map:"新千歳空港",web:"https://www.new-chitose-airport.jp/ja/"},
+ {t:"17:10",m:1030,ic:"🛬",ty:"move",h:"広島空港 着",n:"荷物を受け取ったらリムジンバスのりばへ",map:"広島空港",web:"https://www.hij.airport.jp/"},
+ {t:"17:30〜",m:1050,ic:"🚌",ty:"move",h:"広島空港 → 五日市（リムジンバス＋JR）",pat:[["A","バス 広島空港 17:30発 → 広島駅 18:20着","JR 広島 18:38発 → 五日市 18:55着"],["B","バス 広島空港 17:40発 → 広島駅 18:30着","JR 広島 18:45発 → 五日市 19:01着"],["C","バス 広島空港 17:40発 → 広島駅 18:30着","JR 広島 19:00発 → 五日市 19:17着"]],n:"リムジンバスは広島空港の2番のりば。運賃 大人1,500円（片道・全席自由・予約不要）。",w:"到着便に合わせて発車時刻が変わることがあります。",map:"広島空港 リムジンバス のりば",web:"https://www.hij.airport.jp/access/timetable/2.html"},
+ {t:"19時前後",m:1135,ic:"🏠",ty:"todo",h:"五日市駅 着。おかえりなさい！",n:"ハネムーンおつかれさまでした。",map:"JR五日市駅"}
+]}
+];
+const ACC=["#ee5a36","#2ba39d","#e8548c","#8cc63f","#f2c230","#3d8fd1"];
+const ON=["#fff","#fff","#fff","#484848","#484848","#fff"];
+const P={
+plane:'<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
+land:'<path d="M17.8 17.2 16 9l3.5-3.5C21 4 21.5 2 21 1c-1-.5-3 0-4.5 1.5L13 6 4.8 4.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 10l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" transform="translate(0 -1)"/><path d="M3 22.5h18"/>',
+train:'<path d="M6 3h12a2 2 0 0 1 2 2v11a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a2 2 0 0 1 2-2z"/><path d="M4 11h16M8 19l-2 3M16 19l2 3"/><circle cx="8.5" cy="15" r=".8"/><circle cx="15.5" cy="15" r=".8"/>',
+bus:'<path d="M5 3h14a2 2 0 0 1 2 2v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2z"/><path d="M3 11h18M6.5 18v2.5M17.5 18v2.5"/><circle cx="7.5" cy="14.5" r=".8"/><circle cx="16.5" cy="14.5" r=".8"/>',
+car:'<path d="M4 17v-5l2-5h12l2 5v5M3 17h18M5 12h14"/><circle cx="8" cy="17" r="1.3"/><circle cx="16" cy="17" r="1.3"/>',
+bag:'<path d="M7 7h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zM9 7V4h6v3M9 11v6M15 11v6"/>',
+fork:'<path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M17 21V3c-3 1-4 5-4 9h4"/>',
+bowl:'<path d="M3 12h18a9 9 0 0 1-18 0zM8 8.5c0-1.5 1-2 0-3.500M12 8.5c0-1.5 1-2 0-3.500M16 8.5c0-1.5 1-2 0-3.5"/>',
+beer:'<path d="M6 7h9v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zM15 10h2.500a1.5 1.5 0 0 1 1.5 1.500v3a1.5 1.5 0 0 1-1.5 1.500H15M6 7c0-2 2-3 4-2 1-1.5 4-1 5 2"/>',
+cam:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/>',
+mtn:'<path d="M3 20l6-11 4 7 3-4 5 8z"/>',
+shop:'<path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/>',
+bed:'<path d="M3 19V6M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/>',
+spa:'<path d="M4 19c2-2 3 2 5 0s3 2 5 0 3 2 6 0M8 4c-1.5 2 1.5 3 0 5M13 4c-1.5 2 1.5 3 0 5M18 4c-1.5 2 1.5 3 0 5"/>',
+shirt:'<path d="M8 3 3 7l3 3 2-1v12h8V9l2 1 3-3-5-4a4 4 0 0 1-8 0z"/>',
+home:'<path d="M3 11 12 3l9 8v10H3zM9 21v-6h6v6"/>',
+pin:'<path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.700l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.700l1-1"/>',
+tel:'<path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+warn:'<path d="M12 3 22 20H2z"/><path d="M12 10v4.500M12 17.200v.1"/>',
+star:'<path d="m12 3 2.600 5.600 6 .7-4.5 4.1 1.2 6-5.3-3 -5.3 3 1.2-6L3.400 9.300l6-.7z"/>',
+prev:'<path d="m15 5-7 7 7 7"/>',next:'<path d="m9 5 7 7-7 7"/>',
+theme:'<circle cx="12" cy="12" r="8.5"/><path d="M12 3.500a8.5 8.5 0 0 0 0 17z" fill="currentColor"/>'};
+const IC={"✈":"plane","🛬":"land","🍛":"bowl","🚃":"train","🚄":"train","🚉":"train","🚌":"bus","🚕":"car","🧳":"bag","📸":"cam","🍖":"fork","🍽":"fork","🍣":"bowl","🦀":"bowl","🍶":"beer","🏨":"bed","♨":"spa","🧺":"shirt","🎐":"cam","🌋":"mtn","🛍":"shop","🏠":"home"};
+const svg=k=>'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+P[k]+'</svg>';
+const ico=e=>svg(IC[e.replace(/\uFE0F/g,"")]||"pin");
+const W=["日","月","火","水","木","金","土"];
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,"0");
+const mq=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const ymd=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const dd=s=>{const[a,b,c]=s.split("-").map(Number);return new Date(a,b-1,c)};
+let cur=0;
+$("prev").innerHTML=svg("prev");$("next").innerHTML=svg("next");$("tgl").innerHTML=svg("theme");
+
+function defaultDay(){
+  const t=ymd(new Date()),i=DAYS.findIndex(x=>x.d===t);
+  if(i>=0)return i;
+  return t<DAYS[0].d?0:DAYS.length-1;
+}
+function tick(){
+  const n=new Date();
+  $("clk").textContent=pad(n.getHours())+":"+pad(n.getMinutes());
+  $("dt").innerHTML=n.getFullYear()+"年<br>"+(n.getMonth()+1)+"月"+n.getDate()+"日（"+W[n.getDay()]+"）";
+  const t0=new Date(n.getFullYear(),n.getMonth(),n.getDate()),s=dd(DAYS[0].d),e=dd(DAYS[DAYS.length-1].d);
+  const diff=Math.round((s-t0)/864e5);
+  $("cd").textContent=diff>0?"出発まであと "+diff+" 日！":(t0<=e?"旅行中！ 楽しんで":"おかえりなさい");
+  if(ymd(n)===DAYS[cur].d)render(true);
+}
+function btn(c,k,l,u){return '<a class="btn '+c+'" href="'+u+'" target="_blank" rel="noopener">'+svg(k)+l+'</a>'}
+function render(keep){
+  const D=DAYS[cur],dt=dd(D.d),n=new Date(),isToday=ymd(n)===D.d,nm=n.getHours()*60+n.getMinutes();
+  const r=document.documentElement.style;
+  r.setProperty("--accent",ACC[cur]);r.setProperty("--on",ON[cur]);
+  $("dnum").textContent="DAY "+(cur+1);
+  $("dlab").textContent=(dt.getMonth()+1)+"/"+dt.getDate()+"（"+W[dt.getDay()]+"）"+(isToday?"・今日":"");
+  $("route").textContent=D.route;
+  $("prev").disabled=cur===0;$("next").disabled=cur===DAYS.length-1;
+  $("dots").innerHTML=DAYS.map((x,i)=>'<button class="dot'+(i===cur?" on":"")+(ymd(n)===x.d?" today":"")+'" data-i="'+i+'">'+(i+1)+'</button>').join("");
+  let nowIdx=-1;
+  if(isToday)D.items.forEach((x,i)=>{if(x.m!=null&&x.m<=nm)nowIdx=i});
+  $("tl").innerHTML=D.items.map((x,i)=>{
+    let b="";
+    if(x.map)b+=btn("map","pin","マップ",mq(x.map));
+    if(x.web)b+=btn("web","link","公式サイト",x.web);
+    if(x.ty==="hotel"&&x.tel)b+='<a class="btn tel" href="tel:'+x.tel.replace(/[^0-9+]/g,"")+'">'+svg("tel")+x.tel+'</a>';
+    const lab={move:"MOVE",eat:"GOURMET",sight:"SPOT",hotel:"HOTEL",todo:"MEMO"}[x.ty];
+    const cls=(i===nowIdx?" now":"")+(nowIdx>=0&&i<nowIdx?" past":"");
+    return '<div class="it t-'+x.ty+cls+'"><div class="tm"><i>'+ico(x.ic)+'</i><b>'+x.t+'</b></div><div class="cd2"><span class="tag">'+lab+'</span><h3>'+x.h+'</h3>'
+      +(x.n?'<p>'+x.n+'</p>':'')+(x.pat?'<div class="pat">'+x.pat.map(p=>'<div class="pr"><span class="pl">'+p[0]+'</span><div><span>'+p[1]+'</span><span>'+p[2]+'</span></div></div>').join('')+'</div>':'')+(x.w?'<p class="warn">'+svg("warn")+'<span>'+x.w+'</span></p>':'')
+      +(x.rec?'<div class="rec"><b>'+svg("star")+'おすすめ</b>'+x.rec.map(r=>'<div class="ri"><div><strong>'+r[0]+'</strong><small>'+r[1]+'</small></div>'+btn("map","pin","",mq(r[2]||r[0]))+'</div>').join("")+'</div>':'')
+      +(b?'<div class="btns">'+b+'</div>':'')+'</div></div>';
+  }).join("");
+  if(!keep)window.scrollTo({top:0,behavior:"smooth"});
+}
+function go(i){if(i<0||i>=DAYS.length)return;cur=i;render()}
+$("prev").onclick=()=>go(cur-1);
+$("next").onclick=()=>go(cur+1);
+$("dots").onclick=e=>{const i=e.target.dataset.i;if(i!=null)go(+i)};
+let sx=0;
+document.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+document.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>80)go(cur+(d<0?1:-1))},{passive:true});
+$("tgl").onclick=()=>{const r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark"};
+cur=defaultDay();render(true);tick();setInterval(tick,30000);
+</script>
+</body>
+</html>
